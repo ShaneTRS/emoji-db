@@ -2,6 +2,5 @@ sed -i -E 's/alt=":([^:]+):" src="([^"]+)"/\n{"name": "\1","url": "\2"},\n/g' sp
 grep '{"name": "' split>tmp
 split -l30 tmp
 sed -i '1i{"name": "Emoji","author": "Shane","emotes": [' x*
-sed -i '$ s/.$//' x*
-echo ']}'>>x*
+sed -i '$ s/.$/]}/' x*
 rm tmp
