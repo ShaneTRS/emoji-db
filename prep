@@ -1,4 +1,7 @@
-split -l30 ../../split
+sed -i -E 's/alt=":([^:]+):" src="([^"]+)"/\n{"name": "\1","url": "\2"},\n/g' tmp
+grep '{"name": "' tmp>split
+split -l30 split
 sed -i '1i{"name": "Emoji","author": "Shane","emotes": [' x*
 sed -i '$ s/.$//' x*
 echo ']}'>>x*
+rm tmp split
