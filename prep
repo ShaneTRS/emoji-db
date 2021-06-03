@@ -1,4 +1,0 @@
-split -l30 ../../split
-sed -i '1i{"name": "Emoji","author": "Shane","emotes": [' x*
-sed -i '$ s/.$//' x*
-echo ']}'>>x*
